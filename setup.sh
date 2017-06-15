@@ -39,6 +39,14 @@ then
     sudo apt install -y mongodb-org
 fi
 
+# install Open MPI compiler
+read -p "Do you want to install Open MPI compiler? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Open MPI compiler ...\n\n"
+    sudo apt install -y libopenmpi-dev
+fi
+
 # install Docker community version
 read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
@@ -52,6 +60,17 @@ then
         stable"
     sudo apt update
     sudo apt install -y docker-ce
+fi
+
+# install Ansible
+read -p "Do you want to install Ansible? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Ansible ...\n\n"
+    sudo apt install software-properties-common
+    sudo apt-add-repository ppa:ansible/ansible
+    sudo apt update
+    sudo apt install -y ansible
 fi
 
 # download and install stacer 1.0.7 (a system cleaning app)

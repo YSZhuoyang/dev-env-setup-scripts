@@ -94,7 +94,18 @@ then
     sudo rm -r stacer_1.0.7_amd64.deb
 fi
 
-# check and install missing dependencies, cleanup
+# install .Net core (dotnet-dev-1.0.4)
+read -p "Do you want to install .Net core (dotnet-dev-1.0.4)? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall .Net core (dotnet-dev-1.0.4) ...\n\n"
+    sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
+    sudo apt update
+    sudo apt install -y dotnet-dev-1.0.4
+fi
+
+# check and install missing dependencies, cleanup ...
 printf "\nCheck and install missing dependencies ...\n\n"
 sudo apt install -f -y
 sudo apt autoremove -y

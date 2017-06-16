@@ -26,6 +26,14 @@ then
     printf "\nInstall nodejs 8 ...\n\n"
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt install -y nodejs
+
+    # install npm packages
+    read -p "Do you want to install create-react-app npm package? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        printf "\nInstall create-react-app ...\n\n"
+        sudo npm install -g create-react-app
+    fi
 fi
 
 # install mongoDB for Ubuntu 16.04

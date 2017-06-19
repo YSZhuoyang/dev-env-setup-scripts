@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# For Ubuntu Gnome.
 
 # install common used apt packages and update system packages
 printf "Install common used apt packages and update built-in packages ...\n\n"
@@ -33,6 +33,13 @@ then
     then
         printf "\nInstall create-react-app ...\n\n"
         sudo npm install -g create-react-app
+    fi
+
+    read -p "Do you want to install eslint npm package? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        printf "\nInstall eslint ...\n\n"
+        sudo npm install -g eslint
     fi
 fi
 

@@ -4,7 +4,7 @@
 # install common used apt packages and update system packages
 printf "Install common used apt packages and update built-in packages ...\n\n"
 sudo apt update
-sudo apt install -y git vim filezilla
+sudo apt install -y git vim filezilla curl
 sudo apt upgrade -y
 
 # install vscode
@@ -60,7 +60,7 @@ read -p "Do you want to install Docker community version? Y/y for yes; Others fo
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall Docker community version ...\n\n"
-    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+    sudo apt install -y apt-transport-https ca-certificates software-properties-common
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository \
         "deb [arch=amd64] https://download.docker.com/linux/ubuntu \

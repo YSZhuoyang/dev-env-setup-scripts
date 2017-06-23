@@ -62,6 +62,16 @@ then
     sudo apt install -y libopenmpi-dev
 fi
 
+# install Java 8
+read -p "Do you want to install Java 8? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Java 8 ...\n\n"
+    sudo add-apt-repository ppa:webupd8team/java
+    sudo apt update
+    sudo apt install -y oracle-java8-installer
+fi
+
 # install Docker community version
 read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]

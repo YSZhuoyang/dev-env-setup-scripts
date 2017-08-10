@@ -41,6 +41,20 @@ then
         printf "\nInstall eslint ...\n\n"
         sudo npm install -g eslint
     fi
+
+    read -p "Do you want to install typescript? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        printf "\nInstall tslint and tsc ...\n\n"
+        sudo npm install -g tslint typescript
+    fi
+
+    read -p "Do you want to install knockoutjs and typing plugin? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        printf "\nInstall knockout ...\n\n"
+        sudo npm install -g knockout types/knockout
+    fi
 fi
 
 # install mongoDB for Ubuntu 16.04

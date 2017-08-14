@@ -59,7 +59,7 @@ then
     read -p "Do you want to install lessjs? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
-        printf "\nInstall knockout ...\n\n"
+        printf "\nInstall less npm ...\n\n"
         sudo npm install -g less
     fi
 fi

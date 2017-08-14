@@ -55,6 +55,13 @@ then
         printf "\nInstall knockout ...\n\n"
         sudo npm install -g knockout types/knockout
     fi
+
+    read -p "Do you want to install lessjs? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        printf "\nInstall knockout ...\n\n"
+        sudo npm install -g less
+    fi
 fi
 
 # install mongoDB for Ubuntu 16.04

@@ -62,6 +62,18 @@ then
         printf "\nInstall less npm ...\n\n"
         sudo npm install -g less
     fi
+
+fi
+
+# Install Heroku CLI
+read -p "Do you want to install Heroku? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Heroku CLI ...\n\n"
+    sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+    curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+    sudo apt update
+    sudo apt install heroku -y
 fi
 
 # install mongoDB for Ubuntu 16.04

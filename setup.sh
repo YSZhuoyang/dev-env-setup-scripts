@@ -58,19 +58,19 @@ then
 
 fi
 
-# Install golang V1.9.2
-read -p "Do you want to install golang V1.9.2? Y/y for yes; Others for no: " ANS
+# Install golang V1.10
+read -p "Do you want to install golang V1.10? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall golang V1.9.2 ...\n\n"
-    sudo wget "https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+    printf "\nInstall golang V1.10 ...\n\n"
+    sudo wget "https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     echo "export GOPATH=\$HOME/Documents/Sources/GoWorkPlace" >> ~/.profile
     echo "export GOBIN=\$GOPATH/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.9.2.linux-amd64.tar.gz
+    sudo rm -r go1.10.linux-amd64.tar.gz
 fi
 
 # Install Heroku CLI
@@ -103,14 +103,14 @@ then
     sudo apt install -y libopenmpi-dev
 fi
 
-# install Java 8
-read -p "Do you want to install Java 8? Y/y for yes; Others for no: " ANS
+# install Java 9
+read -p "Do you want to install Java 9? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall Java 8 ...\n\n"
+    printf "\nInstall Java 9 ...\n\n"
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt update
-    sudo apt install -y oracle-java8-installer
+    sudo apt install -y oracle-java9-installer
 fi
 
 # install Docker community version

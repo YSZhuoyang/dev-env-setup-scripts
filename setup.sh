@@ -73,6 +73,26 @@ then
     sudo rm -r go1.10.linux-amd64.tar.gz
 fi
 
+# Install CUDA V9.1.85.3
+read -p "Do you want to install CUDA V9.1.85.3? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall CUDA V9.1 ...\n\n"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda_9.1.85_387.26_linux"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/1/cuda_9.1.85.1_linux"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/2/cuda_9.1.85.2_linux"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/3/cuda_9.1.85.3_linux"
+    sudo sh cuda_9.1.85_387.26_linux.run --override
+    sudo sh cuda_9.1.85.1_linux.run
+    sudo sh cuda_9.1.85.2_linux.run
+    sudo sh cuda_9.1.85.3_linux.run
+    # Setup environment
+    echo "export PATH=\$PATH:/usr/local/cuda-9.1/bin" >> ~/.profile
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.1/lib64" >> ~/.profile
+    # Remove temp files
+    sudo rm -r cuda_9.1.85_387.26_linux.run cuda_9.1.85.1_linux.run cuda_9.1.85.2_linux.run cuda_9.1.85.3_linux.run
+fi
+
 # Install Heroku CLI
 read -p "Do you want to install Heroku? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]

@@ -11,6 +11,8 @@ sudo apt upgrade -y
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
+    printf "\nInstall dependencies ...\n\n"
+    sudo apt install -y xclip
     printf "\nInstall vscode ...\n\n"
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg

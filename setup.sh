@@ -65,14 +65,14 @@ read -p "Do you want to install golang V1.10? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall golang V1.10 ...\n\n"
-    sudo wget "https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+    sudo wget "https://storage.googleapis.com/golang/go1.10.2.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     echo "export GOPATH=\$HOME/Documents/Sources/GoWorkPlace" >> ~/.profile
     echo "export GOBIN=\$GOPATH/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.10.linux-amd64.tar.gz
+    sudo rm -r go1.10.2.linux-amd64.tar.gz
 fi
 
 # Install CUDA V9.1.85.3

@@ -1,5 +1,5 @@
 #!/bin/bash
-# For Ubuntu Gnome.
+# This script is used to install packages and configure environment on Ubuntu for convenience.
 
 # install common used apt packages and update system packages
 printf "Install common used apt packages and update built-in packages ...\n\n"

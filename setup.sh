@@ -61,38 +61,34 @@ then
 fi
 
 # Install golang V1.10
-read -p "Do you want to install golang V1.10? Y/y for yes; Others for no: " ANS
+read -p "Do you want to install golang V1.10.2? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall golang V1.10 ...\n\n"
-    sudo wget "https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+    printf "\nInstall golang V1.10.2 ...\n\n"
+    sudo wget "https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     echo "export GOPATH=\$HOME/Documents/Sources/GoWorkPlace" >> ~/.profile
     echo "export GOBIN=\$GOPATH/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.10.linux-amd64.tar.gz
+    sudo rm -r go1.10.2.linux-amd64.tar.gz
 fi
 
-# Install CUDA V9.1.85.3
-read -p "Do you want to install CUDA V9.1.85.3? Y/y for yes; Others for no: " ANS
+# Install CUDA V9.2
+read -p "Do you want to install CUDA V9.2.88.1? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall CUDA V9.1 ...\n\n"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda_9.1.85_387.26_linux"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/1/cuda_9.1.85.1_linux"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/2/cuda_9.1.85.2_linux"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/3/cuda_9.1.85.3_linux"
-    sudo sh cuda_9.1.85_387.26_linux.run --override
-    sudo sh cuda_9.1.85.1_linux.run
-    sudo sh cuda_9.1.85.2_linux.run
-    sudo sh cuda_9.1.85.3_linux.run
+    printf "\nInstall CUDA V9.2.88.1 ...\n\n"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod/local_installers/cuda_9.2.88_396.26_linux"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod/patches/1/cuda_9.2.88.1_linux"
+    sudo sh cuda_9.2.88_396.26_linux.run
+    sudo sh cuda_9.2.88.1_linux.run
     # Setup environment
-    echo "export PATH=\$PATH:/usr/local/cuda-9.1/bin" >> ~/.profile
-    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.1/lib64" >> ~/.profile
+    echo "export PATH=\$PATH:/usr/local/cuda-9.2/bin" >> ~/.profile
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_9.1.85_387.26_linux.run cuda_9.1.85.1_linux.run cuda_9.1.85.2_linux.run cuda_9.1.85.3_linux.run
+    sudo rm -r cuda_9.2.88_396.26_linux.run cuda_9.2.88.1_linux.run
 fi
 
 # Install Heroku CLI

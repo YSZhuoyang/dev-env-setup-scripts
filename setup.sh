@@ -121,14 +121,14 @@ then
     sudo apt install -y libopenmpi-dev
 fi
 
-# install Java 9
-read -p "Do you want to install Java 9? Y/y for yes; Others for no: " ANS
+# install Java 10
+read -p "Do you want to install Java 10? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall Java 9 ...\n\n"
-    sudo add-apt-repository ppa:webupd8team/java
+    printf "\nInstall Java 10 ...\n\n"
+    sudo add-apt-repository ppa:linuxuprising/java
     sudo apt update
-    sudo apt install -y oracle-java9-installer
+    sudo apt install -y oracle-java10-installer
 fi
 
 # install Docker community version

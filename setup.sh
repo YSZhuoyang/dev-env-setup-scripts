@@ -82,13 +82,13 @@ then
     printf "\nInstall CUDA V9.2.88.1 ...\n\n"
     sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod/local_installers/cuda_9.2.88_396.26_linux"
     sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod/patches/1/cuda_9.2.88.1_linux"
-    sudo sh cuda_9.2.88_396.26_linux.run
-    sudo sh cuda_9.2.88.1_linux.run
+    sudo sh cuda_9.2.88_396.26_linux
+    sudo sh cuda_9.2.88.1_linux
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/cuda-9.2/bin" >> ~/.profile
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_9.2.88_396.26_linux.run cuda_9.2.88.1_linux.run
+    sudo rm -r cuda_9.2.88_396.26_linux cuda_9.2.88.1_linux
 fi
 
 # Install Heroku CLI

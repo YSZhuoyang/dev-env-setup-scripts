@@ -22,11 +22,11 @@ then
 fi
 
 # install nodejs 9
-read -p "Do you want to install nodejs 9? Y/y for yes; Others for no: " ANS
+read -p "Do you want to install nodejs 10? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall nodejs 9 ...\n\n"
-    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+    printf "\nInstall nodejs 10 ...\n\n"
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     sudo apt install -y nodejs
 
     # install npm packages

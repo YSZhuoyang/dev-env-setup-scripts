@@ -81,12 +81,14 @@ if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall CUDA V9.2.148 ...\n\n"
     sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux"
+    sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod2/patches/1/cuda_9.2.148.1_linux"
     sudo sh cuda_9.2.148_396.37_linux
+    sudo sh cuda_9.2.148.1_linux
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/cuda-9.2/bin" >> ~/.profile
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_9.2.148_396.37_linux
+    sudo rm -r cuda_9.2.148_396.37_linux cuda_9.2.148.1_linux
 fi
 
 # Install Heroku CLI

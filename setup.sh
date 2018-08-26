@@ -21,7 +21,7 @@ then
     sudo apt install -y code
 fi
 
-# install nodejs 9
+# install nodejs 10
 read -p "Do you want to install nodejs 10? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
@@ -102,13 +102,13 @@ then
     sudo apt install heroku -y
 fi
 
-# install mongoDB for Ubuntu 16.04
-read -p "Do you want to install mongoDB for Ubuntu 16.04? Y/y for yes; Others for no: " ANS
+# install mongoDB for Ubuntu 18.04
+read -p "Do you want to install mongoDB for Ubuntu 18.04? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall mongoDB for Ubuntu 16.04 ...\n\n"
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+    printf "\nInstall mongoDB for Ubuntu 18.04 ...\n\n"
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     sudo apt update
     sudo apt install -y mongodb-org
 fi

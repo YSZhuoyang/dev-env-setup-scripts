@@ -69,8 +69,6 @@ then
     sudo tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
-    echo "export GOPATH=\$HOME/Documents/Sources/GoWorkPlace" >> ~/.profile
-    echo "export GOBIN=\$GOPATH/bin" >> ~/.profile
     # Remove temp files
     sudo rm -r go1.11.linux-amd64.tar.gz
 fi

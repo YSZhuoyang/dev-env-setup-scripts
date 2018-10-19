@@ -29,6 +29,15 @@ then
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     sudo apt install -y nodejs
 
+    # install yarn
+    read -p "Do you want to install yarn? Y/y for yes; Others for no: " ANS
+    if [[ $ANS == "y" || $ANS == "Y" ]]
+    then
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+        sudo apt update && sudo apt install yarn -y
+    fi
+
     # install npm packages
     read -p "Do you want to install create-react-app npm package? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
@@ -73,20 +82,18 @@ then
     sudo rm -r go1.11.linux-amd64.tar.gz
 fi
 
-# Install CUDA V9.2
-read -p "Do you want to install CUDA V9.2.148? Y/y for yes; Others for no: " ANS
+# Install CUDA V10.0
+read -p "Do you want to install CUDA V10.0.130? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall CUDA V9.2.148 ...\n\n"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux"
-    sudo wget "https://developer.nvidia.com/compute/cuda/9.2/Prod2/patches/1/cuda_9.2.148.1_linux"
-    sudo sh cuda_9.2.148_396.37_linux
-    sudo sh cuda_9.2.148.1_linux
+    printf "\nInstall CUDA V10.0.130 ...\n\n"
+    sudo wget "https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux"
+    sudo sh cuda_10.0.130_410.48_linux
     # Setup environment
-    echo "export PATH=\$PATH:/usr/local/cuda-9.2/bin" >> ~/.profile
-    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64" >> ~/.profile
+    echo "export PATH=\$PATH:/usr/local/cuda-10.0/bin" >> ~/.profile
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_9.2.148_396.37_linux cuda_9.2.148.1_linux
+    sudo rm -r cuda_10.0.130_410.48_linux
 fi
 
 # Install Heroku CLI

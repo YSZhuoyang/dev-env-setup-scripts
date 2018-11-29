@@ -21,12 +21,12 @@ then
     sudo apt install -y code
 fi
 
-# install nodejs 10
-read -p "Do you want to install nodejs 10? Y/y for yes; Others for no: " ANS
+# install nodejs 11
+read -p "Do you want to install nodejs 11? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall nodejs 10 ...\n\n"
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    printf "\nInstall nodejs 11 ...\n\n"
+    curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
     sudo apt install -y nodejs
 
     # install yarn
@@ -60,13 +60,12 @@ then
         sudo npm install -g tslint typescript
     fi
 
-    read -p "Do you want to install lessjs? Y/y for yes; Others for no: " ANS
+    read -p "Do you want to install tslint npm package? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
-        printf "\nInstall less npm ...\n\n"
-        sudo npm install -g less
+        printf "\nInstall tslint ...\n\n"
+        sudo npm install -g tslint
     fi
-
 fi
 
 # Install golang V1.11

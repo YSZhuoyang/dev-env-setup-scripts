@@ -73,12 +73,12 @@ read -p "Do you want to install golang V1.11? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall golang V1.11 ...\n\n"
-    sudo wget "https://dl.google.com/go/go1.11.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz
+    sudo wget "https://dl.google.com/go/go1.11.2.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.11.2.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.11.linux-amd64.tar.gz
+    sudo rm -r go1.11.2.linux-amd64.tar.gz
 fi
 
 # Install CUDA V10.0

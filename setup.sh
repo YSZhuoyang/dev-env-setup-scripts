@@ -73,12 +73,12 @@ read -p "Do you want to install golang V1.11? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall golang V1.11 ...\n\n"
-    sudo wget "https://dl.google.com/go/go1.11.2.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.11.2.linux-amd64.tar.gz
+    sudo wget "https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.11.2.linux-amd64.tar.gz
+    sudo rm -r go1.11.5.linux-amd64.tar.gz
 fi
 
 # Install CUDA V10.0
@@ -159,30 +159,6 @@ then
     sudo apt-add-repository ppa:ansible/ansible
     sudo apt update
     sudo apt install -y ansible
-fi
-
-# download and install stacer 1.0.7 (a system cleaning app)
-# repo: https://github.com/oguzhaninan/Stacer
-read -p "Do you want to install stacer 1.0.7? Y/y for yes; Others for no: " ANS
-if [[ $ANS == "y" || $ANS == "Y" ]]
-then
-    printf "\nDownload and install stacer 1.0.7 (a system cleaning app) ...\n\n"
-    wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.7/stacer_1.0.7_amd64.deb
-    install dependencies
-    sudo apt install gconf2 libappindicator1 libindicator7
-    sudo dpkg -i stacer_1.0.7_amd64.deb
-    sudo rm -r stacer_1.0.7_amd64.deb
-fi
-
-# install .Net core (dotnet-dev-1.0.4)
-read -p "Do you want to install .Net core (dotnet-dev-1.0.4)? Y/y for yes; Others for no: " ANS
-if [[ $ANS == "y" || $ANS == "Y" ]]
-then
-    printf "\nInstall .Net core (dotnet-dev-1.0.4) ...\n\n"
-    sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-    sudo apt update
-    sudo apt install -y dotnet-dev-1.0.4
 fi
 
 # check and install missing dependencies, cleanup ...

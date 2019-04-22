@@ -73,26 +73,26 @@ read -p "Do you want to install golang V1.12? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall golang V1.12 ...\n\n"
-    sudo wget "https://dl.google.com/go/go1.12.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.12.linux-amd64.tar.gz
+    sudo wget "https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.12.4.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.12.linux-amd64.tar.gz
+    sudo rm -r go1.12.4.linux-amd64.tar.gz
 fi
 
 # Install CUDA V10.0
-read -p "Do you want to install CUDA V10.0.130? Y/y for yes; Others for no: " ANS
+read -p "Do you want to install CUDA V10.1.105? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall CUDA V10.0.130 ...\n\n"
-    sudo wget "https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux"
-    sudo sh cuda_10.0.130_410.48_linux
+    printf "\nInstall CUDA V10.1.105 ...\n\n"
+    sudo wget "https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux"
+    sudo sh cuda_10.1.105_418.39_linux
     # Setup environment
-    echo "export PATH=\$PATH:/usr/local/cuda-10.0/bin" >> ~/.profile
-    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64" >> ~/.profile
+    echo "export PATH=\$PATH:/usr/local/cuda-10.1/bin" >> ~/.profile
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_10.0.130_410.48_linux
+    sudo rm -r cuda_10.1.105_418.39_linux
 fi
 
 # Install Heroku CLI

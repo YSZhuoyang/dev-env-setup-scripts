@@ -21,12 +21,12 @@ then
     sudo apt install -y code
 fi
 
-# install nodejs 11
-read -p "Do you want to install nodejs 11? Y/y for yes; Others for no: " ANS
+# install nodejs 12
+read -p "Do you want to install nodejs 12? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall nodejs 11 ...\n\n"
-    curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+    printf "\nInstall nodejs 12 ...\n\n"
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     sudo apt install -y nodejs
 
     # install yarn

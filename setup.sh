@@ -73,15 +73,15 @@ read -p "Do you want to install golang V1.12? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall golang V1.12 ...\n\n"
-    sudo wget "https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz"
-    sudo tar -C /usr/local -xzf go1.12.4.linux-amd64.tar.gz
+    sudo wget "https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
     # Remove temp files
-    sudo rm -r go1.12.4.linux-amd64.tar.gz
+    sudo rm -r go1.12.5.linux-amd64.tar.gz
 fi
 
-# Install CUDA V10.0
+# Install CUDA V10.1
 read -p "Do you want to install CUDA V10.1.105? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
@@ -93,17 +93,6 @@ then
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64" >> ~/.profile
     # Remove temp files
     sudo rm -r cuda_10.1.105_418.39_linux
-fi
-
-# Install Heroku CLI
-read -p "Do you want to install Heroku? Y/y for yes; Others for no: " ANS
-if [[ $ANS == "y" || $ANS == "Y" ]]
-then
-    printf "\nInstall Heroku CLI ...\n\n"
-    sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
-    curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
-    sudo apt update
-    sudo apt install heroku -y
 fi
 
 # install mongoDB for Ubuntu 18.04
@@ -148,6 +137,18 @@ then
         stable"
     sudo apt update
     sudo apt install -y docker-ce
+fi
+
+# install Terraform
+read -p "Do you want to install Terraform V0.11.14? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Terraform V0.11.14 ...\n\n"
+    sudo apt install -y unzip
+    wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+    unzip terraform_0.11.14_linux_amd64.zip
+    sudo mv terraform /usr/local/bin/
+    sudo rm -r terraform_0.11.14_linux_amd64.zip
 fi
 
 # install Ansible

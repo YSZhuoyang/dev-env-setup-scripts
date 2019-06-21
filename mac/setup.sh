@@ -1,8 +1,8 @@
 #!/bin/bash
-# This script is used to install packages and configure environment on Ubuntu for convenience.
+# This script is used to install packages and configure environment on Mac OS for convenience.
 
-# install common used apt packages and update system packages
-printf "Install common used apt packages and update built-in packages ...\n\n"
+# install xcode cli
+printf "Install xcode cli ...\n\n"
 xcode-select --install
 
 # install homebrew
@@ -87,7 +87,7 @@ then
     brew cask install java
 fi
 
-# install Docker community version
+# install Docker community edition
 read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then

@@ -53,18 +53,11 @@ then
         sudo npm install -g eslint
     fi
 
-    read -p "Do you want to install typescript? Y/y for yes; Others for no: " ANS
+    read -p "Do you want to install typescript and tslint? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
         printf "\nInstall tslint and tsc ...\n\n"
         sudo npm install -g tslint typescript
-    fi
-
-    read -p "Do you want to install tslint npm package? Y/y for yes; Others for no: " ANS
-    if [[ $ANS == "y" || $ANS == "Y" ]]
-    then
-        printf "\nInstall tslint ...\n\n"
-        sudo npm install -g tslint
     fi
 fi
 

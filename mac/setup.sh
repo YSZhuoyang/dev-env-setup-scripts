@@ -96,6 +96,7 @@ then
     printf "\nInstall Virtualbox driver for docker-machine ...\n\n"
     brew cask install virtualbox
     printf "\nInitialize and launch Docker desktop ..."
+    open /Applications/Docker.app
 fi
 
 # install Terraform

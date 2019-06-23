@@ -11,7 +11,7 @@ brew update
 brew upgrade
 
 # install common utils
-brew install unrar
+brew cask install winzip
 
 # install vscode
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS

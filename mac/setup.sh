@@ -11,7 +11,7 @@ brew update
 brew upgrade
 
 # install common utils
-brew cask install winzip
+brew cask install winzip adobe-acrobat-reader
 
 # install vscode
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS

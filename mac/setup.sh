@@ -13,6 +13,9 @@ brew upgrade
 # install common utils
 brew cask install the-unarchiver adobe-acrobat-reader
 
+# install scripting languages
+brew install python3
+
 # install vscode
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]

@@ -15,7 +15,7 @@ brew cask install the-unarchiver adobe-acrobat-reader
 
 # install scripting languages and linter
 brew install python3
-pip3 install pylint
+pip3 install pylint yapf
 
 # install vscode
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS

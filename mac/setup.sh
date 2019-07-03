@@ -11,7 +11,7 @@ brew update
 brew upgrade
 
 # install common utils
-brew cask install the-unarchiver adobe-acrobat-reader
+brew cask install the-unarchiver
 
 # install scripting languages and linter
 brew install python3

@@ -101,6 +101,14 @@ then
     brew cask install java
 fi
 
+# install .Net Core
+read -p "Do you want to install .Net Core? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall .Net Core ...\n\n"
+    brew cask install dotnet-sdk
+fi
+
 # install Docker community edition
 read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]

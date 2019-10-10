@@ -85,6 +85,14 @@ then
     brew install mongodb-community
 fi
 
+# install protobuf compiler
+read -p "Do you want to install protobuf compiler? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall protobuf compiler ...\n\n"
+    brew install protobuf
+fi
+
 # install Open MPI compiler
 read -p "Do you want to install Open MPI compiler? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]

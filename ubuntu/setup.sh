@@ -75,17 +75,17 @@ then
 fi
 
 # Install CUDA V10.1
-read -p "Do you want to install CUDA V10.1.105? Y/y for yes; Others for no: " ANS
+read -p "Do you want to install CUDA V10.1? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall CUDA V10.1.105 ...\n\n"
-    sudo wget "https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux"
-    sudo sh cuda_10.1.105_418.39_linux
+    printf "\nInstall CUDA V10.1 ...\n\n"
+    wget http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+    sudo sh cuda_10.1.243_418.87.00_linux.run
     # Setup environment
     echo "export PATH=\$PATH:/usr/local/cuda-10.1/bin" >> ~/.profile
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_10.1.105_418.39_linux
+    sudo rm -r cuda_10.1.243_418.87.00_linux.run
 fi
 
 # install mongoDB for Ubuntu 18.04

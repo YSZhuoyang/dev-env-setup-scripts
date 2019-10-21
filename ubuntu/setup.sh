@@ -85,7 +85,7 @@ then
     echo "export PATH=\$PATH:/usr/local/cuda-10.1/bin" >> ~/.profile
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64" >> ~/.profile
     # Remove temp files
-    sudo rm -r cuda_10.1.243_418.87.00_linux.run
+    sudo rm cuda_10.1.243_418.87.00_linux.run
 fi
 
 # install mongoDB for Ubuntu 18.04

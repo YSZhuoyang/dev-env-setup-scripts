@@ -11,7 +11,9 @@ brew update
 brew upgrade
 
 # install common utils
-brew cask install the-unarchiver
+brew cask install keka
+brew cask install macs-fan-control
+brew cask install appcleaner
 
 # install scripting languages and linter
 brew install python3

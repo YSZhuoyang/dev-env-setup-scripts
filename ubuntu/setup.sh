@@ -52,13 +52,6 @@ then
         printf "\nInstall eslint ...\n\n"
         sudo npm install -g eslint
     fi
-
-    read -p "Do you want to install typescript and tslint? Y/y for yes; Others for no: " ANS
-    if [[ $ANS == "y" || $ANS == "Y" ]]
-    then
-        printf "\nInstall tslint and tsc ...\n\n"
-        sudo npm install -g tslint typescript
-    fi
 fi
 
 # Install golang V1.12

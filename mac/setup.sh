@@ -60,13 +60,6 @@ then
     then
         printf "\nInstall tsc ...\n\n"
         npm install -g typescript
-
-        read -p "Do you want to install tslint npm package? Y/y for yes; Others for no: " ANS
-        if [[ $ANS == "y" || $ANS == "Y" ]]
-        then
-            printf "\nInstall tslint ...\n\n"
-            npm install -g tslint
-        fi
     fi
 fi
 

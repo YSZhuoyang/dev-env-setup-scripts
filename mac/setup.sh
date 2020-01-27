@@ -126,7 +126,9 @@ then
     read -p "Do you want to install kubectl and minikube? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
-        printf "\nInstall kubectl and minikube ...\n\n"
+        printf "\nInstall kubectl ...\n\n"
+        brew install kubectl
+        printf "\nInstall minikube ...\n\n"
         brew install minikube
 
         printf "\nConfig vm driver ...\n\n"

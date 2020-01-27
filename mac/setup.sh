@@ -123,12 +123,11 @@ then
     printf "\nInitialize and launch Docker desktop ..."
     open /Applications/Docker.app
 
-    read -p "Do you want to install minikube? Y/y for yes; Others for no: " ANS
+    read -p "Do you want to install kubectl and minikube? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
-        printf "\nInstall minikube ...\n\n"
-        curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 && chmod +x minikube
-        sudo mv minikube /usr/local/bin
+        printf "\nInstall kubectl and minikube ...\n\n"
+        brew install minikube
 
         printf "\nConfig vm driver ...\n\n"
         minikube config set vm-driver virtualbox

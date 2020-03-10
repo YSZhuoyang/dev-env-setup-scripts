@@ -17,6 +17,7 @@ brew cask install appcleaner
 
 # install scripting languages and linter
 brew install python3
+brew install wget
 pip3 install pylint yapf
 
 # install vscode

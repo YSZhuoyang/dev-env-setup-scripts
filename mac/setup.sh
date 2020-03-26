@@ -133,7 +133,7 @@ then
         brew install minikube
 
         printf "\nConfig vm driver ...\n\n"
-        minikube config set vm-driver virtualbox
+        minikube config set driver docker
     fi
 fi
 

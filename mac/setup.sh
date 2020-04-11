@@ -113,16 +113,19 @@ then
     brew cask install dotnet-sdk
 fi
 
+read -p "Do you want to install Virtualbox? Y/y for yes; Others for no: " ANS
+if [[ $ANS == "y" || $ANS == "Y" ]]
+then
+    printf "\nInstall Virtualbox ...\n\n"
+    brew cask install virtualbox
+fi
+
 # install Docker community edition
 read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall Docker community version ...\n\n"
     brew cask install docker
-    printf "\nInstall Virtualbox driver for docker-machine ...\n\n"
-    brew cask install virtualbox
-    printf "\nInitialize and launch Docker desktop ..."
-    open /Applications/Docker.app
 
     read -p "Do you want to install kubectl and minikube? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]

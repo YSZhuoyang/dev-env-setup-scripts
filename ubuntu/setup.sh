@@ -126,15 +126,15 @@ then
 fi
 
 # install Terraform
-read -p "Do you want to install Terraform V0.11.14? Y/y for yes; Others for no: " ANS
+read -p "Do you want to install Terraform V0.12.26? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall Terraform V0.11.14 ...\n\n"
+    printf "\nInstall Terraform V0.12.26 ...\n\n"
     sudo apt install -y unzip
-    wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
-    unzip terraform_0.11.14_linux_amd64.zip
+    wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip
+    unzip terraform_0.12.26_linux_amd64.zip
     sudo mv terraform /usr/local/bin/
-    sudo rm -r terraform_0.11.14_linux_amd64.zip
+    sudo rm -r terraform_0.12.26_linux_amd64.zip
 fi
 
 # install Ansible

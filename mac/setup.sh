@@ -2,21 +2,15 @@
 # This script is used to install packages and configure environment on Mac OS for convenience.
 
 # install xcode cli
-printf "Install xcode cli ...\n\n"
-xcode-select --install
+# printf "Install xcode cli ...\n\n"
+# xcode-select --install
 
 # install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update
 brew upgrade
 
 # install common utils
-brew cask install keka
-brew cask install macs-fan-control
-brew cask install appcleaner
-
-# install scripting languages and linter
-brew install python3
 brew install wget
 pip3 install pylint yapf
 
@@ -24,7 +18,7 @@ pip3 install pylint yapf
 read -p "Do you want to install vscode? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    brew cask install visual-studio-code
+    brew install visual-studio-code --cask
 fi
 
 # install nodejs
@@ -102,7 +96,7 @@ read -p "Do you want to install Java? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall Java ...\n\n"
-    brew cask install java
+    brew install java --cask
 fi
 
 # install .Net Core
@@ -110,33 +104,36 @@ read -p "Do you want to install .Net Core? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall .Net Core ...\n\n"
-    brew cask install dotnet-sdk
+    brew install dotnet-sdk --cask
 fi
 
 read -p "Do you want to install Virtualbox? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
     printf "\nInstall Virtualbox ...\n\n"
-    brew cask install virtualbox
+    brew install virtualbox --cask
 fi
 
-# install Docker community edition
-read -p "Do you want to install Docker community version? Y/y for yes; Others for no: " ANS
+# install Docker desktop
+read -p "Do you want to install Docker desktop? Y/y for yes; Others for no: " ANS
 if [[ $ANS == "y" || $ANS == "Y" ]]
 then
-    printf "\nInstall Docker community version ...\n\n"
-    brew cask install docker
+    printf "\nInstall Docker desktop ...\n\n"
+    brew install docker --cask
 
-    read -p "Do you want to install kubectl and minikube? Y/y for yes; Others for no: " ANS
+    read -p "Do you want to install kubectl? Y/y for yes; Others for no: " ANS
     if [[ $ANS == "y" || $ANS == "Y" ]]
     then
         printf "\nInstall kubectl ...\n\n"
         brew install kubectl
-        printf "\nInstall minikube ...\n\n"
-        brew install minikube
 
-        printf "\nConfig vm driver ...\n\n"
-        minikube config set driver docker
+        read -p "Do you want to install helm? Y/y for yes; Others for no: " ANS
+        if [[ $ANS == "y" || $ANS == "Y" ]]
+        then
+            printf "\nInstall helm ...\n\n"
+            brew install helm
+            helm repo add stable https://charts.helm.sh/stable
+        fi
     fi
 fi
 
